@@ -19,10 +19,12 @@ Feel free to edit, use, or interpolate as your portfolio, template, or however a
     --link-clr:              #da2;
     ...
 ```
-- Update your copyright year in footer, in  `js/app.js`, `getFullYear(2022)` call function. Change 2022 to your year started. e.g.: If you put `getFullYear(2010)` will display &copy; 2010 - 2022
+- Update your copyright year in footer, in  `js/app.js`, `getFullYear(2022)` call function. Change 2022 to your year started. e.g.: If you put `getFullYear(2010)` will display *&copy; 2010 - 2022*
 - Generate/replace your own favicon's
+- Will update with more documentation...
 
 # Credits
 - Uses [tsparticles](https://particles.js.org/) and [Chart.js](https://www.chartjs.org/) CDN
 - Uses [icons8](https://icons8.com/) icons
-- Will update with more documentation...
+- [Timeline scroll animate](https://webdesign.tutsplus.com/tutorials/building-a-vertical-timeline-with-css-and-a-touch-of-javascript--cms-26528)
+
