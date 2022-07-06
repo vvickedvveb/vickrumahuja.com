@@ -1,0 +1,118 @@
+@property --pie_percent{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+.pie {
+    --pie_percent:90;
+    --pie_border_width:22px;
+    --pie_color: var(--pie-day-night-clr);
+    --pie_rad_width:380px;
+
+    width:var(--pie_rad_width);
+    aspect-ratio:1;
+    position:relative;
+    display:inline-grid;
+    margin:5px;
+    place-content:center;
+    font-size:25px;
+    font-weight:bold;
+    font-family:sans-serif;
+}
+
+.pie:before,
+.pie:after {
+    content:"";
+    position:absolute;
+    border-radius:50%;
+}
+
+.pie:before {
+    inset:0;
+    background: radial-gradient(farthest-side,var(--pie_color) 98%,#0000) top/var(--pie_border_width) var(--pie_border_width) no-repeat,
+        conic-gradient(var(--pie_color) calc(var(--pie_percent)*1%),#0000 0);
+
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--pie_border_width)),#000 calc(100% - var(--pie_border_width)));
+        mask:radial-gradient(farthest-side,#0000 calc(99% - var(--pie_border_width)),#000 calc(100% - var(--pie_border_width)));
+}
+.pie:after {
+    inset:calc(50% - var(--pie_border_width) / 2);
+    background:var(--pie_color);
+    transform:rotate(calc(var(--pie_percent)*3.6deg)) translateY(calc(50% - var(--pie_rad_width)/2));
+}
+
+.animate {
+    animation:p 1s .5s both;
+}
+
+.no-round:before {
+    background-size:0 0,auto;
+}
+
+.no-round:after {
+    content:none;
+}
+
+@keyframes p {
+    from{--pie_percent:0}
+}
+
+
+
+
+
+
+
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .pie {
+        --pie_rad_width:220px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .pie {
+        --pie_rad_width:240px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .pie {
+        --pie_rad_width:280px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .pie {
+        --pie_rad_width:270px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .pie {
+        --pie_rad_width:320px;
+    }
+}
+
+/* Extra, extra large devices (large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .pie {
+        --pie_rad_width:340px;
+    }
+}
+
+/* Extra, extra, extra large devices (large desktops, 1500px and up) */
+@media (min-width: 1500px) {
+    @media (min-width: 1400px) {
+        .pie {
+            --pie_rad_width:380px;
+        }
+    }
+}
