@@ -5,7 +5,13 @@ Feel free to edit, use, or interpolate as your portfolio, template, or however a
 # Make It Yours
 - Update Google Analytics and < meta > tags with yours in < head >
 - Update your hero pic from my mug `images/vick.png` (500x500)
-- Update your email address in `index.html` (footer section)
+- Update your email address in `index.html` (footer section), obfuscated
+```html
+<li>
+    <!-- Bootstrap Email Icon -->
+    <a class="foot-link" href='&#1...'>
+        ...
+```
 - Theme/dark theme colors: `css/styles.css`
 ```css
 :root {
@@ -19,7 +25,7 @@ Feel free to edit, use, or interpolate as your portfolio, template, or however a
     --link-clr:              #da2;
     ...
 ```
-- Update your copyright year in footer, in  `js/app.js`, `getFullYear(2022)` call function. Change 2022 to your year started. e.g.: If you put `getFullYear(2010)` will display *&copy; 2010 - 2022*
+- Update your copyright year in footer, in  `js/app.js`, `getFullYear(2022)` function call. Change *2022* to your year started. e.g.: If you put `getFullYear(2010)` will display *&copy; 2010 - 2022*
 - Generate/replace your own favicon's
 - Will update with more documentation...
 
